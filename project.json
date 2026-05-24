@@ -1,0 +1,14 @@
+{
+  "id": "11",
+  "repo": "agentic-commerce-rag-policy-assistant",
+  "title": "RAG Assistant for Commerce Policies",
+  "summary": "Deterministic local retrieval over markdown commerce policies with citations and refusal behavior.",
+  "copy": [
+    "rag-policy-assistant"
+  ],
+  "extra_tests": {
+    "tests/test_rag.py": "\n                import sys\n                from pathlib import Path\n\n                sys.path.insert(0, str(Path('rag-policy-assistant').resolve()))\n                from answer import answer\n\n                def test_out_of_stock_answer_has_citation():\n                    result = answer('What happens if an item is out of stock?')\n                    assert result['citations']\n                    assert result['citations'][0]['source'] == 'substitutions.md'\n            "
+  },
+  "verify": "python3.11 -m pytest tests",
+  "run": "cd rag-policy-assistant && python3.11 answer.py 'What happens if an item is out of stock?'"
+}

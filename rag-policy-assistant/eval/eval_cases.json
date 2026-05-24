@@ -1,0 +1,17 @@
+[
+  {
+    "id": "RAG001",
+    "query": "What happens if an item is out of stock?",
+    "expected_source": "substitutions.md"
+  },
+  {
+    "id": "RAG002",
+    "query": "Can I return refrigerated items?",
+    "expected_source": "returns.md"
+  },
+  {
+    "id": "RAG003",
+    "query": "How do digital coupons work?",
+    "expected_source": "coupons.md"
+  }
+]
